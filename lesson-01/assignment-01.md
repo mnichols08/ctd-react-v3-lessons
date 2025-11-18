@@ -65,7 +65,7 @@ We want to preserve a fresh installation of the project in case anything happens
 Your App component should look like:
 
 ```jsx
-import "./App.css";
+import './App.css';
 
 function App() {
   return (
@@ -115,7 +115,7 @@ return (
   <div>
     <h1>Todo List</h1>
     <ul>
-      {todos.map((todo) => (
+      {todos.map(todo => (
         <li key={todo.id}>{todo.title}</li>
       ))}
     </ul>
@@ -215,11 +215,12 @@ rules: {
 - [x] Copy the PR link and submit assignment. [https://github.com/mnichols08/ctd-react-v3-guided-project/pull/2](https://github.com/mnichols08/ctd-react-v3-guided-project/pull/2)
 
 #### Assignment Mindset Questionaire
-*   **Q:** What’s your rule of thumb for when to ask for help?
-*   **A:** I usually try to solve the problem on my own for at least 10-15 minutes before searching Google. If I am unable to find a solution after an hour, I will break down to ask for help.
 
-*   **Q:** When is an instance where you wish you would have asked for help sooner?
-*   **A:** In my day job, I have to use catalogs to find parts and I am particularly hard headed when it comes to asking for help. But I have learned over the years to be less stubborn. I usually try for up to 10 minutes before asking a coworker for input these days. But there were times when I would not even ask, leading to both internal frustration and the customer being frustrated as well. I wish I had not been like that.
+- **Q:** What’s your rule of thumb for when to ask for help?
+- **A:** I usually try to solve the problem on my own for at least 10-15 minutes before searching Google. If I am unable to find a solution after an hour, I will break down to ask for help.
 
-*   **Q:** What information have you found crucial to include in your questions so that mentors or peers can help answer your questions quicker? 
-*   **A:** I find it very useful to share the task that I am working on, and the steps I have taken so far. In addition, screenshots, and environment information like which code editor, browser, operating system, etc can be critical for getting help.
+- **Q:** When is an instance where you wish you would have asked for help sooner?
+- **A:** In my day job, I have to use catalogs to find parts and I am particularly hard headed when it comes to asking for help. But I have learned over the years to be less stubborn. I usually try for up to 10 minutes before asking a coworker for input these days. But there were times when I would not even ask, leading to both internal frustration and the customer being frustrated as well. I wish I had not been like that.
+
+- **Q:** What information have you found crucial to include in your questions so that mentors or peers can help answer your questions quicker?
+- **A:** I find it very useful to share the task that I am working on, and the steps I have taken so far. In addition, screenshots, and environment information like which code editor, browser, operating system, etc can be critical for getting help.

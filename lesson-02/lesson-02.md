@@ -17,7 +17,7 @@ import './index.css';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
-  </StrictMode>,
+  </StrictMode>
 );
 ```
 
@@ -93,9 +93,9 @@ function App() {
       React.createElement('img', {
         src: ctdLogo,
         alt: 'Code The Dream Logo',
-      }),
+      })
     ),
-    React.createElement('h2', null, 'Coming Soon...'),
+    React.createElement('h2', null, 'Coming Soon...')
   );
 }
 export default App;
@@ -274,7 +274,7 @@ To keep the transpilation process simple and performant, we must follow some rul
     <button onClick={() => logIn()}>Log In</button>
   )}
   <ul>
-    {products.map((product) => (
+    {products.map(product => (
       <li>{product.name}</li>
     ))}
   </ul>
