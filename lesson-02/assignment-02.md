@@ -89,3 +89,17 @@ The app should now look like:
 After this week, the instructions will start assuming some knowledge of the topics and tasks covered the previous weeks. As a result, fewer code examples will be given in instructions. You will also be responsible for remembering all basic version control tasks - merging, pulling, committing, publishing to GH, etc.
 
 As a React student, it is important to gain practice in working through some tasks on your own and being able to reach out for assistance when you get stuck. We aim to make this course challenging but it won't be impossible either! Any areas that are particularly challenging or confusing will include tips or hints that can help out.
+
+#### Assignment Mindset Questionaire
+
+- **Q:** Have you ever used any AI tools (ex. chatGPT, Grammerly, Dall-E, etc.)? If yes, what did you use it for? If no, did you choose not to use AI, or you just haven't explored it/aren't aware of how to use it?
+- **A:** I have used AI for a lot of different tasks over the past few years. I have used it to help improve my writing for blog posts. I also use it to brainstorm ideas to write about. I very often use Perplexity at work to help cross reference part numbers (I sell auto parts for a living). I started off heavily against it but eventually I found it to be incredibly useful. Sometimes I use it a bit too much, but I feel like it is a tool we have to learn to live with.
+
+- **Q:** What did you think about your interaction with AI?
+- **A:** As mentioned above, I was against it at first. But I was also against using React at first. I always focused on learning the fundamentals first. However I wish I had jumped on the AI bandwagon a little sooner. But overall I enjoy it. However I do long for the days before AI since there is now so much of it used everwhere it is hard to find the line between real and artificial.
+
+- **Q:** What are ways you think AI can help you as you learn content throughout this class?
+- **A:** I think that this course or all courses for that matter benefit from being able to ask AI to elaborate a little bit more, and to create study plans as necessary. 
+
+- **Q:** What are ways that AI can cause frustration or negatively impact your learning?
+- **A:** AI can make mistakes and often leads to bugs in software if it's overused (for example, vibe coding), but it can also give false information steering us wrong and leading to more confusion than necessary. 
