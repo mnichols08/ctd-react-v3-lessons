@@ -14,10 +14,10 @@ After completing this week's assignment, your app should:
   - Remember that you can destructure this value from the props directly in the component function's arguments. eg: `function ExampleComponent({name}){...`
 - [x] Add a list item element to the return statement that includes the `todo`'s title between the element tags.
 - [x] Add a default export statement for that component at the bottom of its file.
-- [ ] Returning to `TodoList.jsx`, import `TodoListItem`.
-- [ ] Replace the list item tags in the `map` with an instance of the `TodoListItem` using a self-closing tag.
-- [ ] Pass the `todo` in as props to the `TodoListItem` instance.
-- [ ] Remember that the map statement returns an array. React requires that we place a `key` props in Components rendered from an array. Use the `todo.id` as the value of `key`.
+- [x] Returning to `TodoList.jsx`, import `TodoListItem`.
+- [x] Replace the list item tags in the `map` with an instance of the `TodoListItem` using a self-closing tag.
+- [x] Pass the `todo` in as props to the `TodoListItem` instance.
+- [x] Remember that the map statement returns an array. React requires that we place a `key` props in Components rendered from an array. Use the `todo.id` as the value of `key`.
 
 At this point, the todo list in the browser should appear identical. However, if you go to the [React developer tools'](https://react.dev/learn/react-developer-tools) component tab in your browser's dev tools, you'll see that the `TodoList` has three sub-component instances of `TodoListItem`. Each contains a key coinciding to the `todo.id`.
 
