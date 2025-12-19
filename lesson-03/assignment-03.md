@@ -25,17 +25,17 @@ At this point, the todo list in the browser should appear identical. However, if
 
 ### Instructions Part 2: State for New Todos
 
-- Go to the `App` component and import the `useState` hook.
-- Inside the function definition, before the return statement, create a new state value that will hold a new todo.
-  - Use array destructuring to save the state value as `newTodo` and the state update function as `setNewTodo`.
-  - Use a short string as the state's `initialValue`.
+- [x] Go to the `App` component and import the `useState` hook.
+- [x] Inside the function definition, before the return statement, create a new state value that will hold a new todo.
+  - [x] Use array destructuring to save the state value as `newTodo` and the state update function as `setNewTodo`.
+  - [x] Use a short string as the state's `initialValue`.
 
 ```js
 //example useState
 const [exampleStateValue, setExampleStateValue] = useState(42)
 ```
 
-- Between the `TodoForm` and the `TodoList`, add a paragraph and place the state value between its opening and closing tags.
+- [x] Between the `TodoForm` and the `TodoList`, add a paragraph and place the state value between its opening and closing tags.
 
 The browser should render that `initialValue` between the form and the todo list.
 
