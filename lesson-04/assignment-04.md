@@ -126,3 +126,11 @@ Next week, we'll improve the way we handle the form when we talk about "controll
 
 - allow the user to edit or complete todo list items
 - persist the todoList to local storage
+
+## Mindset Responses
+- Q: In your own words, what does it mean to be curious about something?
+- A: To be curious about something is to find a desire within one's self to explore more about it
+- Q: What’s one thing that you were curious to learn more about recently (this doesn’t need to be coding-related)? How did you learn more about it?
+- A: I am learning about morse code a little bit, because I wanted to give my dad a unique holiday gift from my newborn son. I utilized ChatGPT to learn more and to decode a special message to him fom the perspective of my son. He is a longtime HAM radio enthusiast so my wife mentioned it and I found the idea very thoughtful and so my interest was piqued.
+- Q: What’s one best practice you’ve learned in your first few weeks at CTD that you don’t know “the why” behind? How can you find out “the why”?
+- A: I am trying to keep a change log to maintain my code base. I am learning more about the why as I do it - I am stil working to find out why it is a best practice by practicing it, but I think it helps my future self read through the changes and the tags will help me if i ever want to easily go back to a previous version.
