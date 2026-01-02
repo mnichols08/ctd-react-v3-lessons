@@ -4,10 +4,10 @@
 
 Components are one of the fundamental building blocks of any React application. One of their main strengths is reusability. By writing components once and instantiating them as needed, we can streamline development and improve code maintainability. Certain elements in a UI tend to repeat themselves. These repeated elements might look same but contain different content. Conversely, they may have slightly different appearances but are structurally similar. These include:
 
-- article excerpts on a blog's home page
-- product cards
-- list items
-- day boxes in a calendar
+- [ ] article excerpts on a blog's home page
+- [ ] product cards
+- [ ] list items
+- [ ] day boxes in a calendar
 
 We have already seen a few examples of repeated elements in CTD Swag. The blurred out product cards and the shopping cart items are both elements that repeat themselves. In fact, we've already had some experience with the card components. The shopping cart items are a prime example of an element that can be turned into a re-usable component. Inside of the `Cart` component, we map over the `workingCart` to create each list item. Rather than housing the code in `Cart` component, it can be extracted out to a `CartItem` component. Doing so saves space in the existing component file plus make it easier to read.
 
@@ -15,11 +15,11 @@ We have already seen a few examples of repeated elements in CTD Swag. The blurre
 
 Another category of reusable components are elements that are used throughout an interface that allow user to navigate or interact with the page. They can also be visual details that unify the look and feel of an interface. Such components could include:
 
-- buttons
-- tooltips
-- dialog boxes
-- navigation menus
-- forms
+- [ ] buttons
+- [ ] tooltips
+- [ ] dialog boxes
+- [ ] navigation menus
+- [ ] forms
 
 Any visual element is a candidate to become a reusable component as long as 2 criteria are met. 1.) They accept the same props and 2.) they have the same underlying structure. If we also take advantage of default props values and children props, we can further increase opportunities for creating re-usable components. Lets step away from CTD Swag to examine a `Dialog` component to see how we can make it into a flexible, reusable component.
 
@@ -59,20 +59,20 @@ export function Dialog() {
 
 We can categorize the information that we provide into one of several categories: **info**, **success**, **error**, or **warning**. Each one of these are commonly associated with colors and icons to help convey the message's tone to the user. Adding these to our dialog could help our user better understand the information that we are trying to convey.
 
-- success: green, ✔️ (check mark)
-- error: red, ❌ (cross mark - not to be confused with x or X)
-- warning: yellow, ⚠️ (warning)
-- info: no color or blue, ℹ️ (information)
+- [ ] success: green, ✔️ (check mark)
+- [ ] error: red, ❌ (cross mark - [ ] not to be confused with x or X)
+- [ ] warning: yellow, ⚠️ (warning)
+- [ ] info: no color or blue, ℹ️ (information)
 
 > [!accessibility note]
 > Do not rely on color alone! [Around 300 million people](https://my.clevelandclinic.org/health/diseases/11604-color-blindness) around the world have some form of color blindness. This is why it's important to also include an icon when using any sort of color coding. More information about common color accessibility issues can be found on [deque's website](https://www.deque.com/blog/3-common-color-accessibility-issues-one-can-easily-avoid/). They are a maker of a popular suite of accessibility tools.
 
 The first step in making a `Dialog` component extensible is to add a `kind` prop to the `Dialog`'s definition. We'll set it to default value of "info" since that's the most generic category and can act as the default fallback. We can then use that prop to configure the rest of the component.
 
-- import images for each category and create an image lookup object
-- create a background-color lookup object
-- add in a background style for the dialog's heading
-- update the image's src using the props and image lookup object
+- [ ] import images for each category and create an image lookup object
+- [ ] create a background-color lookup object
+- [ ] add in a background style for the dialog's heading
+- [ ] update the image's src using the props and image lookup object
 
 Our updated `Dialog` component code now looks like:
 
@@ -157,7 +157,7 @@ export default App;
 
 ![toggle through dialog types](https://raw.githubusercontent.com/Code-the-Dream-School/react-curriculum-v3/refs/heads/main/learns-app-content/lessons/assets/week-06/toggle-dialogs.gif)
 
-The dialog has a default `kind` when first rendered and when changed, it displays a different color and a helpful icon in its heading. Suppose that we have messages that come from an API response that we wanted to include them instead of the static paragraph we currently had. We have two options with this approach - we can add a `message` props or we can place the message into the instance using `children` props. Using the `children` approach has the added advantage that we can further format the message or include other jsx.
+The dialog has a default `kind` when first rendered and when changed, it displays a different color and a helpful icon in its heading. Suppose that we have messages that come from an API response that we wanted to include them instead of the static paragraph we currently had. We have two options with this approach - [ ] we can add a `message` props or we can place the message into the instance using `children` props. Using the `children` approach has the added advantage that we can further format the message or include other jsx.
 
 To do this, we'll add a `children` props to `Dialog` component's definition and replace the paragraph of [lorem ipsum](https://en.wikipedia.org/wiki/Lorem_ipsum) text with `{children}`. This acts as an outlet for any jsx nested in between the component instance's tags.
 
@@ -226,18 +226,18 @@ We inevitably add more components and refactor out non-React code into separate 
 
 Before we start reorganizing our project, we ask the following questions about each file or code passage as we review the project's contents:
 
-- **What feature(s) does it support?** In the context of organizing a React project, a "feature" typically refers to a distinct and self-contained functionality or section of the application that serves a specific purpose. If a component supports multiple features, it's considered shared.
-  - CTD Swag currently has 2 features: a list of items for sale and a checkout cart. This list will grow as we add more functionality.
-  - The `ProductCard` is already componentized and is used inside of the list of items for sale. Since it is only meant for use with the cart, we group it with feature code related to `ProductList`.
-  - Another portion of feature-related code is the checkout item - the elements that it uses have not been converted into component but will be as we refactor the project this week. Since it's only is found in a single feature, we'll group it with code related to `Cart`.
-- **Does a component serve mostly as a layout structure or help organize the UI?** For example, is it a heading, footer, a sidebar, or help contain the main content of the app?
-  - CTD Swag already includes a Header component and we will refactor out the footer into its own component this week.
-- **Is it reused or does the same code show up in multiple places?**
-  - Buttons, forms, and other reusable elements we discussed earlier should be considered here. We do not have any at this time but we can be assured that we will develop some so we can create a placeholder for them in the structure.
-- **Does it help us work with a 3rd party library, data retrieval, or storage?**
-  - This is not a question that we are ready to answer for CTD Swag. We don't implement any other libraries but we will eventually need a payment processing system. Processors such as Stripe, PayPal, or ApplePay provide developers with a software development kit (SDK) which include necessary resources to work with their platforms. We also don't implement LocalStorage, IndexedDB, or any APIs yet but will in future lessons. We can make a placeholder for these so we remember where they go.
-- **Is it a helper utility that can function independently from React?**
-  - `getCartPrice` in the Cart component is a function that tallies up the cost of each item in the cart. It doesn't rely on any React code. We could turn it into helper utility since we may use it again during the checkout process we build later. For now, it will remain in place since we can take care of that refactor when we build the checkout feature. The same rationale applies to `getItemCount` in Header.
+- [ ] **What feature(s) does it support?** In the context of organizing a React project, a "feature" typically refers to a distinct and self-contained functionality or section of the application that serves a specific purpose. If a component supports multiple features, it's considered shared.
+  - [ ] CTD Swag currently has 2 features: a list of items for sale and a checkout cart. This list will grow as we add more functionality.
+  - [ ] The `ProductCard` is already componentized and is used inside of the list of items for sale. Since it is only meant for use with the cart, we group it with feature code related to `ProductList`.
+  - [ ] Another portion of feature-related code is the checkout item - [ ] the elements that it uses have not been converted into component but will be as we refactor the project this week. Since it's only is found in a single feature, we'll group it with code related to `Cart`.
+- [ ] **Does a component serve mostly as a layout structure or help organize the UI?** For example, is it a heading, footer, a sidebar, or help contain the main content of the app?
+  - [ ] CTD Swag already includes a Header component and we will refactor out the footer into its own component this week.
+- [ ] **Is it reused or does the same code show up in multiple places?**
+  - [ ] Buttons, forms, and other reusable elements we discussed earlier should be considered here. We do not have any at this time but we can be assured that we will develop some so we can create a placeholder for them in the structure.
+- [ ] **Does it help us work with a 3rd party library, data retrieval, or storage?**
+  - [ ] This is not a question that we are ready to answer for CTD Swag. We don't implement any other libraries but we will eventually need a payment processing system. Processors such as Stripe, PayPal, or ApplePay provide developers with a software development kit (SDK) which include necessary resources to work with their platforms. We also don't implement LocalStorage, IndexedDB, or any APIs yet but will in future lessons. We can make a placeholder for these so we remember where they go.
+- [ ] **Is it a helper utility that can function independently from React?**
+  - [ ] `getCartPrice` in the Cart component is a function that tallies up the cost of each item in the cart. It doesn't rely on any React code. We could turn it into helper utility since we may use it again during the checkout process we build later. For now, it will remain in place since we can take care of that refactor when we build the checkout feature. The same rationale applies to `getItemCount` in Header.
 
 Answers for each of these questions help us determine how to group aspects of the codebase. We end up with an anticipated project structure that resembles the following:
 
@@ -280,27 +280,27 @@ Answers for each of these questions help us determine how to group aspects of th
 
 The outline below provides a few more notes on the directories.
 
-- **assets/** - static resources such as fonts and images used for the UI
-  - product images and catalog.json are for placeholder data until we establish an API to manage a live inventory
-- **features/** - components grouped by functionality
-  - if a feature does not need sub-components, its primary component can be placed directly in this folder
-  - when features are refactored into sub-components, a folder of the same name as the feature is added to store all related files
-  - any component used by multiple features gets moved to `shared/`
-- **services/** - non-React functionality extracted from components
-  - **.gitkeep**[^gitkeep] - placeholder file
-- **shared/** - re-usable components that are used in more than one feature
-  - **.gitkeep** - placeholder file
-- **layout/** - components used to help organize and divide the UI into manageable pieces
+- [ ] **assets/** - [ ] static resources such as fonts and images used for the UI
+  - [ ] product images and catalog.json are for placeholder data until we establish an API to manage a live inventory
+- [ ] **features/** - [ ] components grouped by functionality
+  - [ ] if a feature does not need sub-components, its primary component can be placed directly in this folder
+  - [ ] when features are refactored into sub-components, a folder of the same name as the feature is added to store all related files
+  - [ ] any component used by multiple features gets moved to `shared/`
+- [ ] **services/** - [ ] non-React functionality extracted from components
+  - [ ] **.gitkeep**[^gitkeep] - [ ] placeholder file
+- [ ] **shared/** - [ ] re-usable components that are used in more than one feature
+  - [ ] **.gitkeep** - [ ] placeholder file
+- [ ] **layout/** - [ ] components used to help organize and divide the UI into manageable pieces
 
 ### Refactoring a Project for Expansion
 
 #### Create Directories and Organize Existing Files
 
-To start the refactor, we create the new directories and move existing files into their updated location. As each file is moved, it's important to make sure that import statements are updated - both inside the file as well as wherever it is being imported. Running the dev server provides in-browser errors that are handy at letting us know where file imports are incorrect.
+To start the refactor, we create the new directories and move existing files into their updated location. As each file is moved, it's important to make sure that import statements are updated - [ ] both inside the file as well as wherever it is being imported. Running the dev server provides in-browser errors that are handy at letting us know where file imports are incorrect.
 
 ![vite fails to resolve import](https://raw.githubusercontent.com/Code-the-Dream-School/react-curriculum-v3/refs/heads/main/learns-app-content/lessons/assets/week-06/error-hint-fail-import.png)
 
-VS Code is helpful in making some of these updates automatically as we move around files too. Be careful to double-check the imports in the file being moved - VS Code may not recognize non-JavaScript imports. Being able to import images and other non-JavaScript files is a feature of Vite and is not a part of [JavaScript module syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).
+VS Code is helpful in making some of these updates automatically as we move around files too. Be careful to double-check the imports in the file being moved - [ ] VS Code may not recognize non-JavaScript imports. Being able to import images and other non-JavaScript files is a feature of Vite and is not a part of [JavaScript module syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).
 
 ![alt](https://raw.githubusercontent.com/Code-the-Dream-School/react-curriculum-v3/refs/heads/main/learns-app-content/lessons/assets/week-06/import-dialog.png)
 
@@ -446,19 +446,19 @@ flowchart TD
 
 For those who prefer a text-based approach, the following is a bulleted outline of the diagram above:
 
-- Is it an _element tag_ and does it contain any _props_?
-  - **yes to element, no to props**: we can copy it as-is
-  - **yes to element, yes to props**
-    - does the _props_ reference any _state_ or _callbacks_, _variables_, or _functions_ defined in the top level of the component?
-      - **no**: are props **static**?
-  - **yes**: the element can be copied as-is
-  - **no**: are all the values defined in a block contained in the element being extracted to a new component?
-    - **yes**: the element can be copied with the block as-is
-    - **no**: we need to account for them based on their usage in the application
-    - **yes**: we need to account for them based on their usage in the application
-  - **no to element**: is it a _comment_ or a self-contained block that _does not reference_ anything outside of the JSX being extracted?
-    - **yes**: it can be copied as-is
-    - **no**: we need to account for any props, variables, or functions referenced and how they're being used
+- [ ] Is it an _element tag_ and does it contain any _props_?
+  - [ ] **yes to element, no to props**: we can copy it as-is
+  - [ ] **yes to element, yes to props**
+    - [ ] does the _props_ reference any _state_ or _callbacks_, _variables_, or _functions_ defined in the top level of the component?
+      - [ ] **no**: are props **static**?
+  - [ ] **yes**: the element can be copied as-is
+  - [ ] **no**: are all the values defined in a block contained in the element being extracted to a new component?
+    - [ ] **yes**: the element can be copied with the block as-is
+    - [ ] **no**: we need to account for them based on their usage in the application
+    - [ ] **yes**: we need to account for them based on their usage in the application
+  - [ ] **no to element**: is it a _comment_ or a self-contained block that _does not reference_ anything outside of the JSX being extracted?
+    - [ ] **yes**: it can be copied as-is
+    - [ ] **no**: we need to account for any props, variables, or functions referenced and how they're being used
 
 > [!note]
 > These questions form a good foundation for planning how to extract a component but there will always be room for improvement. As developers, we solve problems and update our practices based on our experiences. Your decision making processes will evolve as you continue to work with React and gain better a understanding of it and its companion technologies.
@@ -540,25 +540,25 @@ Tests come in three basic categories: unit, integration, and end to end (E2E). E
 
 #### Types of Testing
 
-![venn diagram of test types - unit, integration, end-to-end](https://raw.githubusercontent.com/Code-the-Dream-School/react-curriculum-v3/refs/heads/main/learns-app-content/lessons/assets/week-06/tests-venn_diagram.png)
+![venn diagram of test types - [ ] unit, integration, end-to-end](https://raw.githubusercontent.com/Code-the-Dream-School/react-curriculum-v3/refs/heads/main/learns-app-content/lessons/assets/week-06/tests-venn_diagram.png)
 
 ##### Unit
 
 Unit tests verify the behavior of a component or portion of code in isolation to ensure it performs as expected. Typically, unit tests are small, quick to run, and automated but are used judiciously. Not every component or code passage needs to be tested. Unit tests are generally not useful for presentational components or those that don't manage state. Also avoid testing implementation details:
 
-- **private functions or any purely internal state** - Focus on testing the external behavior that is visible to users or other components.
-- **UI layout and styling**: Other testing methods are more appropriate for styles, layout, or positioning details.
-- **third-party libraries**: Trust that these libraries have their own tests and focus on how your code interacts with them.
-- **exception handling**: Avoid testing error handling logic. Test how your application responds to errors rather than trying to simulate different error scenarios.
+- [ ] **private functions or any purely internal state** - [ ] Focus on testing the external behavior that is visible to users or other components.
+- [ ] **UI layout and styling**: Other testing methods are more appropriate for styles, layout, or positioning details.
+- [ ] **third-party libraries**: Trust that these libraries have their own tests and focus on how your code interacts with them.
+- [ ] **exception handling**: Avoid testing error handling logic. Test how your application responds to errors rather than trying to simulate different error scenarios.
 
 ###### Common Unit Testing Scenarios
 
-- **Rendering Test:** Ensure that the component renders without crashing and contains the expected UI elements.
-- **Props Test:** Verify that the component correctly handles different prop values, including default props, required props, and prop changes.
-- **Conditional Rendering Test:** Test that the component correctly renders different UI elements based on conditional logic or state values.
-- **Event Handling Test:** Validate that event listeners trigger the expected actions or state changes when corresponding events occur.
-- **Error Boundary Test:** Test error boundary components to ensure they catch and handle errors gracefully without crashing the entire application.
-- **Accessibility Test:** Validate that components meet accessibility requirements by testing for proper keyboard navigation, ARIA attributes, and screen reader compatibility.
+- [ ] **Rendering Test:** Ensure that the component renders without crashing and contains the expected UI elements.
+- [ ] **Props Test:** Verify that the component correctly handles different prop values, including default props, required props, and prop changes.
+- [ ] **Conditional Rendering Test:** Test that the component correctly renders different UI elements based on conditional logic or state values.
+- [ ] **Event Handling Test:** Validate that event listeners trigger the expected actions or state changes when corresponding events occur.
+- [ ] **Error Boundary Test:** Test error boundary components to ensure they catch and handle errors gracefully without crashing the entire application.
+- [ ] **Accessibility Test:** Validate that components meet accessibility requirements by testing for proper keyboard navigation, ARIA attributes, and screen reader compatibility.
 
 Because of their focused nature, unit tests will not catch problems arising from how components work together. They do not examine how portions of code or components interact. For this, integration testing is more appropriate.
 
@@ -566,17 +566,17 @@ Because of their focused nature, unit tests will not catch problems arising from
 
 Integration tests validate interactions between components or modules of an application. They help developers identify issues that can arise from interactions or communication gaps. As a result, they focus on validating integration points and communication between components. When testing communication with external resources, we will need to provide simulated data also known as "mock" data. Some key focus points for integration testing:
 
-- **integration points**: Tests interactions between modules, services, databases, APIs, or external systems to verify data flow and communication.
-- **dependencies**: Validates how components interact with each other and handle data exchanges to ensure seamless integration.
-- **data integrity**: Checks the consistency and correctness of data as it moves between different components during integration.
-- **configuration testing**: Verifies that configurations, settings, and dependencies are correctly set up and integrated within the application.
-- **interface testing**: Ensures that interfaces between components are functioning correctly and passing data accurately.
+- [ ] **integration points**: Tests interactions between modules, services, databases, APIs, or external systems to verify data flow and communication.
+- [ ] **dependencies**: Validates how components interact with each other and handle data exchanges to ensure seamless integration.
+- [ ] **data integrity**: Checks the consistency and correctness of data as it moves between different components during integration.
+- [ ] **configuration testing**: Verifies that configurations, settings, and dependencies are correctly set up and integrated within the application.
+- [ ] **interface testing**: Ensures that interfaces between components are functioning correctly and passing data accurately.
 
 ###### Common Integration Test Case Scenarios
 
-- **Component Interaction**: Integration tests in React can validate interactions between multiple components, ensuring they communicate and render correctly.
-- **API Integration**: Testing how React components interact with APIs and handling responses to verify data fetching and updating functionalities.
-- **State Management**: Verifying state changes and updates across components when actions or events trigger state modifications.
+- [ ] **Component Interaction**: Integration tests in React can validate interactions between multiple components, ensuring they communicate and render correctly.
+- [ ] **API Integration**: Testing how React components interact with APIs and handling responses to verify data fetching and updating functionalities.
+- [ ] **State Management**: Verifying state changes and updates across components when actions or events trigger state modifications.
 
 ##### End to End
 
@@ -584,12 +584,12 @@ End-to-end (E2E) testing in React involves testing the application's flow from s
 
 ###### Common Integration Test Case Scenarios
 
-- **User authentication**: Verify if users can sign up, log in, and perform actions based on their authentication status.
-- **Form submissions**: Validate form inputs, submission functionality, and corresponding actions.
-- **API calls**: Ensure data fetching and updating through API requests work as expected.
-- **User interactions**: Validate interactions like clicking buttons, scrolling, or dragging components.
-- **State management**: Verify if state changes within components or across the application are handled correctly.
-- **Responsiveness**: Ensure the application behaves as intended on various devices and screen sizes.
+- [ ] **User authentication**: Verify if users can sign up, log in, and perform actions based on their authentication status.
+- [ ] **Form submissions**: Validate form inputs, submission functionality, and corresponding actions.
+- [ ] **API calls**: Ensure data fetching and updating through API requests work as expected.
+- [ ] **User interactions**: Validate interactions like clicking buttons, scrolling, or dragging components.
+- [ ] **State management**: Verify if state changes within components or across the application are handled correctly.
+- [ ] **Responsiveness**: Ensure the application behaves as intended on various devices and screen sizes.
 
 Of all the testing approaches, E2E tends to be the most complex to set up and maintain. The test suite needs to replicate user behavior so often requires a custom browser to emulate user interactions and capture event details from events that fire in the UI. Many if these interactions visually play out while these tests run so take a long time for a suite of tests to complete. Even if it took only 10 seconds to complete a test, it could take 2 and a half minutes to execute a suite of 15 tests. These type of tests also need to be rewritten as features change or a UI element is updated.
 
@@ -605,25 +605,25 @@ There are a few common terms that need to be defined as they relate to our testi
 
 **Assertion** is a function that evaluates a condition or behavior in the software application to see if it matches an expected outcome. In some documentation, an assertion can also be referred to as an "expectation". Vitest includes three interfaces that allow us to create test cases using different techniques:
 
-- `assert()`: this function accepts an expression to be evaluated and an error message.
-  - `assert` evaluates the expression for truthiness.
-    - example: `assert(1 + 1 === 2, "this message will not be shown")`
-    - example: `assert("4" + "2" === 6, "this message will be shown since JS concatenates strings")`
-  - other assertion functions are accessed from `assert` through dot notation
-    - example: ``assert.typeOf(foo, 'string', '`foo` is not a string');``
-    - we will not be using this approach but it is worthwhile to review a full list of assertions which can be found in the [Chai's assertion documentation](https://www.chaijs.com/api/assert/)
-- `expect()`: this function takes an expression to be evaluated. `expect` is then chained to one or more chain-able assertions that take an outcome as an argument. This approach uses a natural language approach that makes it a popular way to write unit tests.
-  - Eg: `expect(foo, 'test failure message').toEqual('bar');`
-  - Because of its popularity, we will use `expect` most of the time.
-  - assertions are named after the type of assertion that they are making: `toBe` `toBeTruthy`, `toContain`, `toMatch`, `toThrowError`, `toHaveReturned` and so on.
-  - A full list of assertions can be found in [Vitest's documentation](https://vitest.dev/api/expect.html) - There's no need to memorize them but it's good to review all of them. Some have similar sounding names that have some subtle but important differences.
-- `should()`: extends `Object.prototype` to allow assertions to be chained to the expression being examined. There may be use cases where `should` has advantages but it's generally not a good idea to manipulate any global prototypes. This approach also has limited utility for testing the existence of an objects such a database response object.
+- [ ] `assert()`: this function accepts an expression to be evaluated and an error message.
+  - [ ] `assert` evaluates the expression for truthiness.
+    - [ ] example: `assert(1 + 1 === 2, "this message will not be shown")`
+    - [ ] example: `assert("4" + "2" === 6, "this message will be shown since JS concatenates strings")`
+  - [ ] other assertion functions are accessed from `assert` through dot notation
+    - [ ] example: ``assert.typeOf(foo, 'string', '`foo` is not a string');``
+    - [ ] we will not be using this approach but it is worthwhile to review a full list of assertions which can be found in the [Chai's assertion documentation](https://www.chaijs.com/api/assert/)
+- [ ] `expect()`: this function takes an expression to be evaluated. `expect` is then chained to one or more chain-able assertions that take an outcome as an argument. This approach uses a natural language approach that makes it a popular way to write unit tests.
+  - [ ] Eg: `expect(foo, 'test failure message').toEqual('bar');`
+  - [ ] Because of its popularity, we will use `expect` most of the time.
+  - [ ] assertions are named after the type of assertion that they are making: `toBe` `toBeTruthy`, `toContain`, `toMatch`, `toThrowError`, `toHaveReturned` and so on.
+  - [ ] A full list of assertions can be found in [Vitest's documentation](https://vitest.dev/api/expect.html) - [ ] There's no need to memorize them but it's good to review all of them. Some have similar sounding names that have some subtle but important differences.
+- [ ] `should()`: extends `Object.prototype` to allow assertions to be chained to the expression being examined. There may be use cases where `should` has advantages but it's generally not a good idea to manipulate any global prototypes. This approach also has limited utility for testing the existence of an objects such a database response object.
 
 **Test cases** include one or more assertions a test runner executes to determine if functionality works as intended.
 
-- uses a `test` function that takes in a test name, and a function that contains one or more assertions, and an optional timeout.
-- `it` is an alias of `test` so it can be used interchangeably.
-- each assertion should be testing the same code but with different parameters
+- [ ] uses a `test` function that takes in a test name, and a function that contains one or more assertions, and an optional timeout.
+- [ ] `it` is an alias of `test` so it can be used interchangeably.
+- [ ] each assertion should be testing the same code but with different parameters
 
 **Fixture** is a fixed state or set of data used as the baseline for running tests. It can include pre-defined data, settings, or configurations that ensure consistent test conditions for reproducible and reliable testing.
 
@@ -637,13 +637,13 @@ There are a few common terms that need to be defined as they relate to our testi
 
 To get started, we need to install testing libraries. From the terminal, we issue the command `npm install --save-dev @testing-library/dom @testing-library/react @testing-library/jest-dom @testing-library/user-event eslint-plugin-jest-dom jsdom vitest`. This installs:
 
-- **DOM Testing Library** (@testing-library/dom) - base library which RTL is built on top of
-- **RTL** (@testing-library/react)
-- **jest-dom** (@testing-library/jest-dom) - this package also includes some handy assertions to work with dom elements
-- **user-event**(@testing-library/user-event) - simulates user interactions by dispatching events as if they happened in the browser
-- **ESLint's Jest-DOM plugin** (eslint-plugin-jest-dom) - this plugin provides some linting rules that address common errors while writing tests.
-- **JSDOM** - implements DOM and HTML in JavaScript so our test library can render components since unit tests don't use a web browser.
-- **Vitest**
+- [ ] **DOM Testing Library** (@testing-library/dom) - [ ] base library which RTL is built on top of
+- [ ] **RTL** (@testing-library/react)
+- [ ] **jest-dom** (@testing-library/jest-dom) - [ ] this package also includes some handy assertions to work with dom elements
+- [ ] **user-event**(@testing-library/user-event) - [ ] simulates user interactions by dispatching events as if they happened in the browser
+- [ ] **ESLint's Jest-DOM plugin** (eslint-plugin-jest-dom) - [ ] this plugin provides some linting rules that address common errors while writing tests.
+- [ ] **JSDOM** - [ ] implements DOM and HTML in JavaScript so our test library can render components since unit tests don't use a web browser.
+- [ ] **Vitest**
 
 We then add a test command to package.json.
 
