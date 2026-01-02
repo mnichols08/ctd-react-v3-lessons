@@ -912,3 +912,11 @@ it('callback returns product id', async () => {
 Testing in React is a fundamental practice that aids in identifying bugs and errors throughout the development process. By validating code behaviors in different scenarios, tests establish a reliable foundation for consistent functionality. They act as a protective layer, catching unintended repercussions when code modifications occur. A robust test suite guarantees that system integrity is maintained even after changes have been made. This week's discussion covers the basics of unit testing, and it's important to acknowledge that there is much more to explore beyond these foundational materials.
 
 [^gitkeep]: Git does not track empty directories. Empty directories are retained on the local machine but are not pushed. They will not show up on GithHub or for anyone else who pulls down a copy of the repo. To get around this, developers place a `.gitkeep` file in empty directories that git will track. As a consequence, the directory is now _not_ empty so is preserved. We can create a `.gitkeep` file using the terminal command `touch .gitkeep` or right-clicking in VS Code and creating a new file in the target directory. Any type of empty file works here but `.gitkeep` usage lets developers know it's just a placeholder so can be deleted whenever the directory is used.
+
+### Mindset Questionaire
+- Q: How is collaboration used in your own family/culture/current workplace/etc.?
+- A: 
+- Q: What’s one challenge you, personally, encounter while collaborating with others? What ideas do you have for overcoming that challenge?
+- A: 
+- Q: What’s one topic you want to start collaborating with classmates on this week?
+- A: 
