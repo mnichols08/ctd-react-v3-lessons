@@ -218,3 +218,11 @@ _Make sure that both the PR for your todo app and the testing assignment before 
 
 - Create a new test file for Form.
 - Assert that the button is disabled when the operand contains no value. (hint: make sure you use `userEvent` from @testing-library/user-event to empty the field since it has a default value)
+
+### Mindset Questionaire 
+- Q: How is collaboration used in your own family/culture/current workplace/etc.?
+- A: I like to cook and my wife likes to cut up and prep meals. She washes dishes, I dry them. At work, I often lean on my coworkers for help using older books and catalogs, and I am often helping them with technical ones on the computer.
+- Q: What’s one challenge you, personally, encounter while collaborating with others? What ideas do you have for overcoming that challenge?
+- A: It's usually very difficult to schedule a time that works, and doesn't get interupted by life's unexpected occasions.
+- Q: What’s one topic you want to start collaborating with classmates on this week?
+- A: Perhaps a recipe ingredient tracking app would be nice?
