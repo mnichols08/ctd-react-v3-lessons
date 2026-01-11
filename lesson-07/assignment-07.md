@@ -31,46 +31,46 @@ As you go through the setup and documentation, you'll save those values for the 
 
 #### Create Base
 
-- [ ] Your first steps is to [sign up for an Airtable account](https://airtable.com/signup). Once completed, follow the screenshots to set up your todo's base.
+- [x] Your first steps is to [sign up for an Airtable account](https://airtable.com/signup). Once completed, follow the screenshots to set up your todo's base.
 - Choose the Create button at the bottom left and choose to start from scratch.
 
 ![choose start from scratch](https://raw.githubusercontent.com/Code-the-Dream-School/react-curriculum-v3/refs/heads/main/learns-app-content/assignments/assets/week-07/start-scratch.png)
 
-- [ ] Rename the table's default name of "Table 1" to "Todos" by clicking on the down arrow on Table 1's tab.
-- [ ] Save the table name to your environment file under the variable `VITE_TABLE_NAME`
-- [ ] Update the first field name so that it reads "title" instead of "Title".
-- [ ] Delete the other fields.
+- [x] Rename the table's default name of "Table 1" to "Todos" by clicking on the down arrow on Table 1's tab.
+- [x] Save the table name to your environment file under the variable `VITE_TABLE_NAME`
+- [x] Update the first field name so that it reads "title" instead of "Title".
+- [x] Delete the other fields.
 
 ![hit down arrow and select edit field](https://raw.githubusercontent.com/Code-the-Dream-School/react-curriculum-v3/refs/heads/main/learns-app-content/assignments/assets/week-07/update-fields.png)
 
-- [ ] Create a new checkbox field named "isCompleted". This type of field acts a boolean.
+- [x] Create a new checkbox field named "isCompleted". This type of field acts a boolean.
 
 ![add isCompleted field](https://raw.githubusercontent.com/Code-the-Dream-School/react-curriculum-v3/refs/heads/main/learns-app-content/assignments/assets/week-07/add-is-complete.png)
 
 #### Generate Connection Credentials
 
-- [ ] Click on profile picture to open menu.
-- [ ] Select "Builder hub"
+- [x] Click on profile picture to open menu.
+- [x] Select "Builder hub"
 
 ![navigate to builder hub](https://raw.githubusercontent.com/Code-the-Dream-School/react-curriculum-v3/refs/heads/main/learns-app-content/assignments/assets/week-07/builder-hub.png)
 
-- [ ] Select "Create new token".
+- [x] Select "Create new token".
 
 ![create a new personal access token](https://raw.githubusercontent.com/Code-the-Dream-School/react-curriculum-v3/refs/heads/main/learns-app-content/assignments/assets/week-07/new-pat.png)
 
-- [ ] Give the token a name that you'll remember.
-- [ ] Add the scopes `data.records:read` and `data.records.write`
-- [ ] Under the Access heading. Hit "Add a base" and choose your new one.
-- [ ] Hit "Save changes" Copy the token value that shows on the next screen
-- [ ] Save it to `VITE_PAT` in your environment file.
+- [x] Give the token a name that you'll remember.
+- [x] Add the scopes `data.records:read` and `data.records.write`
+- [x] Under the Access heading. Hit "Add a base" and choose your new one.
+- [x] Hit "Save changes" Copy the token value that shows on the next screen
+- [x] Save it to `VITE_PAT` in your environment file.
 
 ![configure access token](https://raw.githubusercontent.com/Code-the-Dream-School/react-curriculum-v3/refs/heads/main/learns-app-content/assignments/assets/week-07/config-pat.png)
 
-- [ ] We next have to find the base's id - one approach is to use the API documentation accessed from the base's help menu.
+- [x] We next have to find the base's id - one approach is to use the API documentation accessed from the base's help menu.
 
 ![navigate to customized api documentation](https://raw.githubusercontent.com/Code-the-Dream-School/react-curriculum-v3/refs/heads/main/learns-app-content/assignments/assets/week-07/find-api-docs.png)
 
-- [ ] After the introduction paragraphs, the documentation includes your personal base's id. Save that to `VITE_BASE_ID` in the environmental file.
+- [x] After the introduction paragraphs, the documentation includes your personal base's id. Save that to `VITE_BASE_ID` in the environmental file.
 
 ![documentation is customized to match base config](https://raw.githubusercontent.com/Code-the-Dream-School/react-curriculum-v3/refs/heads/main/learns-app-content/assignments/assets/week-07/custom-base-docs.png)
 
