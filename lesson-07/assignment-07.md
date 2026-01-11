@@ -99,8 +99,8 @@ In App.jsx:
 
 #### Establish Transition State
 
-- [ ] Create an `isLoading` state variable with with a `defaultValue` of `false`. Destructure out its associated update function, `setIsLoading`, too.
-- [ ] Create another state variable but name it `errorMessage` and default to an empty string, `""`. Include its update function too.
+- [x] Create an `isLoading` state variable with with a `defaultValue` of `false`. Destructure out its associated update function, `setIsLoading`, too.
+- [x] Create another state variable but name it `errorMessage` and default to an empty string, `""`. Include its update function too.
 
 #### Fetch in App
 
