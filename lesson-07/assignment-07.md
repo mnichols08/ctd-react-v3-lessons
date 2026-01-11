@@ -109,13 +109,13 @@ You will use the `useEffect` hook to define and send off the initial fetch reque
 While still in App.jsx:
 
 - [ ] Create constants, `url` and `token`, which will be used in the fetch requests.
-  - [ ] ``const url = `https://api.airtable.com/v0/${import.meta.env.VITE_BASE_ID}/${import.meta.env.VITE_TABLE_NAME}`;``
-  - [ ] ``const token = `Bearer ${import.meta.env.VITE_PAT}`;``
-- [ ] create the `useEffect` that was discussed above:
-  - [ ] Give it an empty dependency array.
-  - [ ] In the body of the function in `useEffect`'s first argument do the following:
-    - [ ] Define an async anonymous arrow function that takes no arguments and save it to `fetchTodos`
-    - [ ] Make sure to call `fetchTodos()` before closing out the `useEffect`'s first argument.
+  - [x] ``const url = `https://api.airtable.com/v0/${import.meta.env.VITE_BASE_ID}/${import.meta.env.VITE_TABLE_NAME}`;``
+  - [x] ``const token = `Bearer ${import.meta.env.VITE_PAT}`;``
+- [x] create the `useEffect` that was discussed above:
+  - [x] Give it an empty dependency array.
+  - [x] In the body of the function in `useEffect`'s first argument do the following:
+    - [x] Define an async anonymous arrow function that takes no arguments and save it to `fetchTodos`
+    - [x] Make sure to call `fetchTodos()` before closing out the `useEffect`'s first argument.
 
 So far, it should look like:
 
@@ -130,18 +130,18 @@ useEffect(() => {
 ```
 
 - continuing in `fetchTodos`
-  - [ ] Use `setIsLoading` to update `isLoading` to `true`
-  - [ ] Create an `options` object for the fetch request. Include:
-    - [ ] A `method` property set to "GET",
-    - [ ] And a `headers` property set to an object containing the following key/value pair: `"Authorization": token`.
+  - [x] Use `setIsLoading` to update `isLoading` to `true`
+  - [x] Create an `options` object for the fetch request. Include:
+    - [x] A `method` property set to "GET",
+    - [x] And a `headers` property set to an object containing the following key/value pair: `"Authorization": token`.
   - Set up `try/catch/finally` blocks to handle the fetch:
     - in `try`
-      - [ ] Save an awaited `fetch` to the const `resp` and pass in the `url` and `options` : `const resp = await fetch(url, options);`
-      - [ ] If `resp.ok` evaluates to false in an `if` statement, throw a new `Error` that takes in `resp.message`.
+      - [x] Save an awaited `fetch` to the const `resp` and pass in the `url` and `options` : `const resp = await fetch(url, options);`
+      - [x] If `resp.ok` evaluates to false in an `if` statement, throw a new `Error` that takes in `resp.message`.
 
 After the `if` block that throws, you'll place your remaining logic to process the API's response.
 
-- [ ] Await the value that `response.json()` returns. We will be working with the `records` array in the response. An example response would be:
+- [x] Await the value that `response.json()` returns. We will be working with the `records` array in the response. An example response would be:
 
 ```JSON
 {
@@ -174,18 +174,18 @@ After the `if` block that throws, you'll place your remaining logic to process t
 
 There are several important details to note when you compare this response against the `todoList` state value:
 
-- [ ] The properties, `isCompleted` and `title` are stored in a `fields` object.
-- [ ] The `id` is at the top level of each todo object.
-- [ ] Any fields that equal false or contain an empty string will not be returned with the todos.
-- [ ] The `records` value will always be an array.
+- [x] The properties, `isCompleted` and `title` are stored in a `fields` object.
+- [x] The `id` is at the top level of each todo object.
+- [x] Any fields that equal false or contain an empty string will not be returned with the todos.
+- [x] The `records` value will always be an array.
 
 Because the "shape" of each todo is different than how they are represented in the app's `todoList` array, you will have to map the contents of `record` out of the response body. The same will be true for the payload of any PUT and PATCH requests.
 
-- [ ] in a `map` method called on `records`, define an anonymous function:
-  - [ ] It takes a `record` param.
-  - [ ] It contains a `const todo = {}`.
-  - [ ] Inside the object, assign the `record` properties to the appropriate todo properties.
-  - [ ] If `isCompleted` is not truthy, you will want to explicitly set the property equal to `false`.
+- [x] in a `map` method called on `records`, define an anonymous function:
+  - [x] It takes a `record` param.
+  - [x] It contains a `const todo = {}`.
+  - [x] Inside the object, assign the `record` properties to the appropriate todo properties.
+  - [x] If `isCompleted` is not truthy, you will want to explicitly set the property equal to `false`.
 
 Use the below `map` examples as reference if needed:
 
@@ -229,11 +229,11 @@ setExamples(records.map(record)=> {
 
 After this, it's time to move on to the `catch` and `finally` blocks.
 
-- [ ] The `catch` block:
-  - [ ] Takes in an error parameter.
-  - [ ] Use `setErrorMessage` with `error.message` to set an error message that we will display to the user shortly.
+- The `catch` block:
+  - [x] Takes in an error parameter.
+  - [x] Use `setErrorMessage` with `error.message` to set an error message that we will display to the user shortly.
 - The `finally` bock:
-  - [ ] Set the `isLoading` state value back to false.
+  - [x] Set the `isLoading` state value back to false.
 
 #### Display Loading Indicator in TodoList
 
