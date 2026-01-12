@@ -407,13 +407,13 @@ At this point, the todo app should:
 
 You'll be left to update `completeTodo` with the necessary logic to communicate the completed todo to the Airtable API and keep the UI synced. You can use `updateTodo` as a reference as you work through this final portion. So that you have a checklist of details to think about: the final code should:
 
-- [ ] optimistically update the UI:
-  - [ ] The todo completes immediately in the UI immediately and allows user to continue to work with the todo list.
-  - [ ] The fetch request happens in the background unless there's a request error.
-  - [ ] The UI for the todo list reverts to its original state if the fetch response does not come back okay.
-  - [ ] Display an error message to the user, using the `errorMessage` state if fetch encounters any problems.
-- [ ] Fetch should use the same headers and method, and take in a payload very similar to the fetch found in `updateTodo`
-- [ ] The same object transformation has to happen between the todo object as represented in state and the todo represented in the `records` property on the payload.
+- Optimistically update the UI:
+  - [x] The todo completes immediately in the UI immediately and allows user to continue to work with the todo list.
+  - [x] The fetch request happens in the background unless there's a request error.
+  - [x] The UI for the todo list reverts to its original state if the fetch response does not come back okay.
+  - [x] Display an error message to the user, using the `errorMessage` state if fetch encounters any problems.
+- [x] Fetch should use the same headers and method, and take in a payload very similar to the fetch found in `updateTodo`
+- [x] The same object transformation has to happen between the todo object as represented in state and the todo represented in the `records` property on the payload.
 
 ### Stretch Goals: Refactor for Reusable Code
 
