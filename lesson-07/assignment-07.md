@@ -237,11 +237,11 @@ After this, it's time to move on to the `catch` and `finally` blocks.
 
 #### Display Loading Indicator in TodoList
 
-- [ ] While still in App.jsx, pass `isLoading` into props for the `TodoList` instance.
+- [x] While still in App.jsx, pass `isLoading` into props for the `TodoList` instance.
 - In TodoList:
-  - [ ] Destructure `isLoading` out of its props.
-  - [ ] Add a statement that evaluates `isLoading` in the JSX that conditionally renders the existing paragraph OR a new paragraph for the loading message.
-  - [ ] The new paragraph should have a loading message to display the user. Eg: `<p>Todo list loading...</p>`
+  - [x] Destructure `isLoading` out of its props.
+  - [x] Add a statement that evaluates `isLoading` in the JSX that conditionally renders the existing paragraph OR a new paragraph for the loading message.
+  - [x] The new paragraph should have a loading message to display the user. Eg: `<p>Todo list loading...</p>`
 
 At this point, the todo list should display a message while the API is loading the todos. Once the fetch resolves, it re-renders with the todo list (Or the original paragraph if 0 todos are loaded).
 
