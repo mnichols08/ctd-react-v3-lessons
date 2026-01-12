@@ -4,10 +4,10 @@
 
 After completing this week's assignment, your app should:
 
-- [ ] Save todos to an Airtable base
-- [ ] Load saved todos from Airtable on loading
-- [ ] Display pending messages during network requests
-- [ ] Display error messages on network or authentication error
+- [x] Save todos to an Airtable base
+- [x] Load saved todos from Airtable on loading
+- [x] Display pending messages during network requests
+- [x] Display error messages on network or authentication error
 
 ### Instructions Part 1: Set up Airtable Base
 
@@ -419,8 +419,8 @@ You'll be left to update `completeTodo` with the necessary logic to communicate 
 
 You will probably have noticed that you are starting to introduce some duplicate code. While that is okay during prototyping and early development, before submitting any final code for a feature (in our case, this assignment), take the time to refactor your code to make it **[DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)**. This will keep the codebase clean and easy to manage. Remember that you should commit your code now so that you have a good save point to return to if you need to start the refactor over again.
 
-- [ ] Look for any items that are defined multiple times and assign them to a variable.
-- [ ] Compare functions or procedures to find common logic that could be shared in a helper or utility function.
+- [x] Look for any items that are defined multiple times and assign them to a variable.
+- [x] Compare functions or procedures to find common logic that could be shared in a helper or utility function.
 - [ ] Brainstorm some more user-friendly error messages.
 - If you visual learner and have to add styling to help visualize the interface better:
   - [ ] Stick to class-based styles that you define in App.css.
