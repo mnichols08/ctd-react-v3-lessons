@@ -423,9 +423,9 @@ You will probably have noticed that you are starting to introduce some duplicate
 - [x] Compare functions or procedures to find common logic that could be shared in a helper or utility function.
 - [x] Brainstorm some more user-friendly error messages.
 - If you visual learner and have to add styling to help visualize the interface better:
-  - [ ] Stick to class-based styles that you define in App.css.
-  - [ ] Don't restructure anything in the JSX. We want to maintain a semantically sound html structure so that when we cover styling in week 10, several style choices applied during the assignment will work out properly.
-  - [ ] Have fun but don't let styling get away of completing the weekly lesson. After all, a baker doesn't ice a cake until after it's baked and cooled.
+  - [x] Stick to class-based styles that you define in App.css.
+  - [x] Don't restructure anything in the JSX. We want to maintain a semantically sound html structure so that when we cover styling in week 10, several style choices applied during the assignment will work out properly.
+  - [x] Have fun but don't let styling get away of completing the weekly lesson. After all, a baker doesn't ice a cake until after it's baked and cooled.
 
 ### Closing Notes
 
