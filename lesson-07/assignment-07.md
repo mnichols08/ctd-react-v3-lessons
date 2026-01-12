@@ -349,12 +349,12 @@ For the final two refactors, you will be using an optimistic approach to UI mana
 In App:
 
 - update `updateTodo:
-  - [ ] Convert it to an async function.
-  - [ ] Save the original todo to `originalTodo`:
+  - [x] Convert it to an async function.
+  - [x] Save the original todo to `originalTodo`:
     - By finding it's associated object in the `todoList` array by each object's id.
-    - [ ] It should look like: `const originalTodo = todoList.find((todo) => todo.id === editedTodo.id)`
-  - [ ] Create `payload` object for the fetch request using `editedTodo`
-    - [ ] The API expects `payload` to be a JSON object containing a `records` array of table records for the Todo table. For reference, here's the JavaScript object you define in preparation to do this:
+    - [x] It should look like: `const originalTodo = todoList.find((todo) => todo.id === editedTodo.id)`
+  - [x] Create `payload` object for the fetch request using `editedTodo`
+    - [x] The API expects `payload` to be a JSON object containing a `records` array of table records for the Todo table. For reference, here's the JavaScript object you define in preparation to do this:
 
 ```JSON
 const payload = {
@@ -371,35 +371,35 @@ const payload = {
 ```
 
 - Continued...
-  - [ ] Create an `options` object for the fetch request.
-    - [ ] Use the PATCH method.
-    - [ ] Use the same Authentication header and include `'Content-Type': 'application/json'` in the `headers` object.
-    - [ ] For the `body` property, convert the `payload` object to a JSON string using `JSON.stringify(payload)`
+  - [x] Create an `options` object for the fetch request.
+    - [x] Use the PATCH method.
+    - [x] Use the same Authentication header and include `'Content-Type': 'application/json'` in the `headers` object.
+    - [x] For the `body` property, convert the `payload` object to a JSON string using `JSON.stringify(payload)`
   - `try` block:
-    - [ ] Send a fetch request using `url` as the endpoint and the `options` object just created.
-      - [ ] Throw an error if `!resp.ok`.
+    - [x] Send a fetch request using `url` as the endpoint and the `options` object just created.
+      - [x] Throw an error if `!resp.ok`.
   - `catch` block:
-    - [ ] Log the error to console.
-    - [ ] Update `errorMessage` using the ``setErrorMessage(`${error.message}. Reverting todo...`);``
-    - [ ] Create a `revertedTodos` using the `originalTodo` to reset that todo's value to a previous state.
-    - [ ] Update state with `setTodoList([...revertedTodos]);`
+    - [x] Log the error to console.
+    - [x] Update `errorMessage` using the ``setErrorMessage(`${error.message}. Reverting todo...`);``
+    - [x] Create a `revertedTodos` using the `originalTodo` to reset that todo's value to a previous state.
+    - [x] Update state with `setTodoList([...revertedTodos]);`
   - `finally` block:
-    - [ ] Set the state value, `isSaving`, to false.
+    - [x] Set the state value, `isSaving`, to false.
 
 In TodoListItem:
 
 We need to cover an edge case where an outdated value is displayed when a user saves a todo and clicks it again immediately.
 
-- [ ] add a useEffect that resets the `workingTitle` to the `todo` prop's `.title` value
-  - [ ] add `todo` to the dependency array.
-  - [ ] call `setWorkingTitle` and pass in the value of `todo.title`
+- add a useEffect that resets the `workingTitle` to the `todo` prop's `.title` value
+  - [x] add `todo` to the dependency array.
+  - [x] call `setWorkingTitle` and pass in the value of `todo.title`
 
 At this point, the todo app should:
 
-1. [ ] Load the todos from Airtable.
-2. [ ] Create new todos with the todo form and persist them in Airtable.
-3. [ ] Allow users to edit todos which will then update in Airtable.
-4. [ ] Display errors messages to the user if there are any fetch issues.
+1. [x] Load the todos from Airtable.
+2. [x] Create new todos with the todo form and persist them in Airtable.
+3. [x] Allow users to edit todos which will then update in Airtable.
+4. [x] Display error messages to the user if there are any fetch issues.
 
 ![error displayed to user at bottom of screen](https://raw.githubusercontent.com/Code-the-Dream-School/react-curriculum-v3/refs/heads/main/learns-app-content/assignments/assets/week-07/error-message.png)
 
