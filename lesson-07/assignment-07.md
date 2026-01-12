@@ -251,11 +251,11 @@ At this point, the todo list should display a message while the API is loading t
 
 In App:
 
-- [ ] Add conditional block after the `TodoList` instance. Use the block to evaluate `errorMessage`.
-  - [ ] If not empty, display a div containing:
-    - [ ] A horizontal rule `<hr/>`.
-    - [ ] A paragraph that renders `errorMessage`.
-    - [ ] A dismiss button that empties `errorMessage`.
+- [x] Add conditional block after the `TodoList` instance. Use the block to evaluate `errorMessage`.
+  - [x] If not empty, display a div containing:
+    - [x] A horizontal rule `<hr/>`.
+    - [x] A paragraph that renders `errorMessage`.
+    - [x] A dismiss button that empties `errorMessage`.
 
 When an error happens with our initial fetch, a message is displayed to the user. We've intentionally made this setup as simple as possible so that we can re-use this error message for other operation errors.
 
