@@ -108,7 +108,7 @@ You will use the `useEffect` hook to define and send off the initial fetch reque
 
 While still in App.jsx:
 
-- [ ] Create constants, `url` and `token`, which will be used in the fetch requests.
+- [x] Create constants, `url` and `token`, which will be used in the fetch requests.
   - [x] ``const url = `https://api.airtable.com/v0/${import.meta.env.VITE_BASE_ID}/${import.meta.env.VITE_TABLE_NAME}`;``
   - [x] ``const token = `Bearer ${import.meta.env.VITE_PAT}`;``
 - [x] create the `useEffect` that was discussed above:
@@ -261,15 +261,15 @@ When an error happens with our initial fetch, a message is displayed to the user
 
 ### Instructions Part 3: Update Add New Todo Functionality
 
-In part 3, you'll use an pessimistic state update approach for adding todos. You'll use transient state to change the text content of the button while the request is processing. We don't want pause the user but it's useful for them to know that the application is processing the last action before their todo is rendered . When the API has processed the response, the todo in the payload response gets added into the todo list state.
+In part 3, you'll use an pessimistic state update approach for adding todos. You'll use transient state to change the text content of the button while the request is processing. We don't want to pause the user but it's useful for them to know that the application is processing the last action before their todo is rendered . When the API has processed the response, the todo in the payload response gets added into the todo list state.
 
 In App:
 
-- [ ] Create state value`isSaving` with a `defaultValue` of false. You will need its update function too.
-- [ ] In the add todo button
-  - [ ] Replace the button text with a ternary block that evaluates `isSaving`.
-    - [ ] If true, display "Saving..."
-    - [ ] If `false`, display "Add Todo" or the text value you were already using.
+- [x] Create state value`isSaving` with a `defaultValue` of false. You will need its update function too.
+- In the add todo button
+  - [x] Replace the button text with a ternary block that evaluates `isSaving`.
+    - [x] If true, display "Saving..."
+    - [x] If `false`, display "Add Todo" or the text value you were already using.
 
 It should now look like:
 
@@ -279,14 +279,14 @@ It should now look like:
 </button>
 ```
 
-- [ ] Update `addTodo(newTodo)`:
-  - [ ] Convert it to an async function.
+- [x] Update `addTodo(newTodo)`:
+  - [x] Convert it to an async function.
   - Inside the function body...
-    - [ ] Create a `payload` object containing a `records` array containing a single todo object.
-    - [ ] Create an `options` object for the fetch request:
-      - [ ] Use the "POST" method.
-      - [ ] Use the same header options from the last request.
-      - [ ] Stringify the `payload` object for `options.body`.
+    - [x] Create a `payload` object containing a `records` array containing a single todo object.
+    - [x] Create an `options` object for the fetch request:
+      - [x] Use the "POST" method.
+      - [x] Use the same header options from the last request.
+      - [x] Stringify the `payload` object for `options.body`.
 
 At this point, `addTodo` should look like:
 
@@ -318,23 +318,23 @@ const addTodo = async (newTodo) => {
 
 - Continuing from inside `addTodo`
   - `try` block logic:
-    - [ ] Set `isSaving` true.
-    - [ ] Send a fetch request and assign it's awaited return value to `resp`.
+    - [x] Set `isSaving` true.
+    - [x] Send a fetch request and assign it's awaited return value to `resp`.
       - (hint: `const resp = await fetch(url, options);`)
-      - [ ] Throw an Error if `!resp.ok`
-    - [ ] Destructure the `records` from the response by using `const { records } = await resp.json();`
-    - [ ] Create a `savedTodo` object that:
-      - [ ] assigns the `id` to the first array entry's id property.
-      - [ ] destructures the remaining key/values pairs out of the only `records` object.
-    - [ ] If the `isCompleted` property in the `records` object is not true, explicitly set that on property on `savedTodo` to `false`
-      - [ ] This looks like `if (!records[0].fields.isCompleted) {savedTodo.isCompleted = false;}`
-      - [ ] Recall that Airtable does not return false or empty fields in the `records`.
-    - [ ] Update state using `setTodoList([...todoList, savedTodo]);`
+      - [x] Throw an Error if `!resp.ok`
+    - [x] Destructure the `records` from the response by using `const { records } = await resp.json();`
+    - Create a `savedTodo` object that:
+      - [x] assigns the `id` to the first array entry's id property.
+      - [x] destructures the remaining key/values pairs out of the only `records` object.
+    - [x] If the `isCompleted` property in the `records` object is not true, explicitly set that on property on `savedTodo` to `false`
+      - [x] This looks like `if (!records[0].fields.isCompleted) {savedTodo.isCompleted = false;}`
+      - [x] Recall that Airtable does not return false or empty fields in the `records`.
+    - [x] Update state using `setTodoList([...todoList, savedTodo]);`
   - `catch` block logic:
-    - [ ] Log the error to console.
-    - [ ] Update `setErrorMessage` state value with `error.message`. This will cause errors to show up for users.
+    - [x] Log the error to console.
+    - [x] Update `setErrorMessage` state value with `error.message`. This will cause errors to show up for users.
   - `finally` block:
-    - [ ] Set `isSaving` to false.
+    - [x] Set `isSaving` to false.
 
 The updates you've made should flash a brief message on the button while the response processes:
 
