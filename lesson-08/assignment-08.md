@@ -105,12 +105,12 @@ You now need to provide the user with a way to update the params.
     - [x] "Ascending" using "asc" for the value
     - [x] "Descending" using "desc" for the value
 - [x] Default export the component.
-- [ ] In `App`, import it and place a horizontal rule between TodoList instance and the div containing the error message display.
-- [ ] Below the `hr`, add an instance of `TodosViewForm`. The `hr` and `form` will show below the todos now:
+- [x] In `App`, import it and place a horizontal rule between TodoList instance and the div containing the error message display.
+- [x] Below the `hr`, add an instance of `TodosViewForm`. The `hr` and `form` will show below the todos now:
 
 ![sort form on bottom of todos](https://raw.githubusercontent.com/Code-the-Dream-School/react-curriculum-v3/refs/heads/main/learns-app-content/assignments/assets/week-08/todos-hr-sort-form.png)
 
-- Into `TodosViewForm` instance, pass in the props `sortDirection`, `setSortDirection`, `sortField`, and `setSortField`.
+- [x] Into `TodosViewForm` instance, pass in the props `sortDirection`, `setSortDirection`, `sortField`, and `setSortField`.
 
 Back over in `TodosViewForm` you'll wire up the form so that each time the user updates the options, the state updates will cause the `useEffect` to automatically fetch from Airtable.
 
