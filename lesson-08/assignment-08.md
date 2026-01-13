@@ -114,7 +114,7 @@ You now need to provide the user with a way to update the params.
 
 Back over in `TodosViewForm` you'll wire up the form so that each time the user updates the options, the state updates will cause the `useEffect` to automatically fetch from Airtable.
 
-- [ ] Destructure `sortDirection`, `setSortDirection`, `sortField`, and `setSortField` out of the component's props.
+- [x] Destructure `sortDirection`, `setSortDirection`, `sortField`, and `setSortField` out of the component's props.
 - On `select`element for the sort by:
   - [ ] Add an `onChange`handler:
     - Its callback is an anonymous function that:
