@@ -173,3 +173,21 @@ Your user is now able to filter the todos based on an input that they then can a
 
 This week you added in functionality to sort the todos by title or its creation date and filter the titles to match a string input. To minimize code edits across several fetches, you extracted the logic to build the URL string into a utility function. Also, as a result of how form state is managed, all updates happen live! Each time a user types or selects an option, the `useEffect` initiates a fetch using the updated url params. This produces so pretty snappy results but can eventually become a burden on the network and API services as the application grows or a user's todo's start growing in number. Next week' we will look at a few ways limit network traffic and perform some other optimizations to the codebase to keep the interface running smoothly.
 
+### Mindset Assignment
+
+#### Information Literacy
+
+Have you ever gotten advice from someone, that turned out to be wrong, perhaps bad advice or just not applicable to you? The internet is a powerful tool to provide information to the masses, but there isn’t anything in place that regulates whether that information is accurate, and it isn’t always immediately apparent when information is or is not applicable to what you’re experiencing. As developers you’ll rely on the internet a lot, but that doesn’t mean all the answers you find will be correct, the best solution, or helpful.
+
+Information literacy is the ability to identify, find, evaluate, and use information effectively. In technology, this often translates not only to assessing the accuracy of answers but also how to find a solution that aligns with your project specifications (ex. Did you find an article with a solution to your problem, but the solution is for someone using a different version of Ruby or NPM?) The specs may not always be a perfect match, but could still shed light on a shared root cause.
+
+Some helpful tools that equip you to have stronger information literacy are:
+
+ALWAYS check date of article or posting, especially with StackOverflow - versions and problems rapidly change in the world of tech. The first thing you should always verify is the WHEN, when was this information posted.
+Know your own specifications (what tools + versions you’re using) so you can be critical about the answers you read. Is this information “from the source” (official developer documentation) or second hand (a tutorial or blog post)? The latter may warrant some additional skepticism—when in doubt start with the source, and then look to secondary resources to supplement. Is this a site you trust and has helped you before reliably? Navigating information sources takes time to get the hang of, so incorporate some of the tools we’ve covered earlier regarding asking for help, debugging, being curious and willing to try new things, and being ok with not knowing the answer at first!
+Lastly, referring to Documentation (directly from whatever technology you are using) should always be your go to when applicable. Documentation will always provide you accurate information.
+Please answer the below prompts in your assignment submission:
+
+- Q: When was a time you got misinformation or bad advice? What happened? Also consider any time an artificial intelligence tool has given you bad/weird answers. Share about that experience here.
+- Q: What are some ‘clues’ that you use to help you assess whether a resource is applicable/trustworthy or not? What are some ways you can verify the information you got from AI was accurate/current?
+- Q: What are some ways you’ll build on your information literacy either in your personal life or as a developer?
