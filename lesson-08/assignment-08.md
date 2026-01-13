@@ -25,9 +25,9 @@ In App.jsx
 
 You'll be using Airtable's query parameters to set the sort and filter options. Since we want to set up a default sort order we'll look at the Airtable's `sort`
 
-- - [ ] Navigate to your table's help documents and select "List records" from the left-hand side navigation. If you don't recall the process to get to that, here's another way you can select your base to get customized documentation: [Introduction - Airtable Web API](https://airtable.com/developers/web/api/introduction)
-- - [ ] Scroll down to `sort` and you'll be able to read about how to work with the `sort` URL query parameter.
-  - - [ ] This will give you some sense about how Airtable's parameters get turned into these ugly URL strings:
+- [ ] Navigate to your table's help documents and select "List records" from the left-hand side navigation. If you don't recall the process to get to that, here's another way you can select your base to get customized documentation: [Introduction - Airtable Web API](https://airtable.com/developers/web/api/introduction)
+- [ ] Scroll down to `sort` and you'll be able to read about how to work with the `sort` URL query parameter.
+  - [ ] This will give you some sense about how Airtable's parameters get turned into these ugly URL strings:
 
 ```text
 sort%5B0%5D%5Bfield%5D=title
@@ -49,58 +49,64 @@ From the decoded string, we can tell that the Airtable API takes string represen
 2 config params also means we need to represent those values in state so a user can toggle them.
 
 - Still in App, create new state variables for the params with associated update functions:
-  - - [ ] `sortField`: initial value of "createdTime"
-  - - [ ] `sortDirection`: initial value of "desc" as in descending
+  - [ ] `sortField`: initial value of "createdTime"
+  - [ ] `sortDirection`: initial value of "desc" as in descending
 
 #### URL Encoding Utility Function
 
 You already employ the `url` in four locations: the `useEffect`, `addTodo`, `updateTodo`, and `completeTodo`. All fetches need to use the same query parameters so that the todo list doesn't spontaneously re-order itself or show all items in a filtered view. You'll centralize the logic in a utility function that exists outside of the component.
 
-- - [ ] Define a function `encodeUrl` above the `App` function definition:
-  - - [ ] It takes an object that includes the properties: `sortField, sortDirection`.
+- [ ] Define a function `encodeUrl` above the `App` function definition:
+  - [ ] It takes an object that includes the properties: `sortField, sortDirection`.
   - - Inside the function, define a template literal that combines the 2 sort query parameters:
-    - - [ ] ``let sortQuery = `sort[0][field]=${sortField}&sort[0][direction]=${sortDirection}`;``
-    - - [ ] This compares to the console output above, but `createdTime` is replaced with a `${sortField}` and `desc` is replaced with `${sortDirection}`.
-  - - [ ] It returns a method call to `encodeURI` that takes in a template literal that appends the query parameters to `url`. The function should resemble:
+    - [ ] ``let sortQuery = `sort[0][field]=${sortField}&sort[0][direction]=${sortDirection}`;``
+    - [ ] This compares to the console output above, but `createdTime` is replaced with a `${sortField}` and `desc` is replaced with `${sortDirection}`.
+  - [ ] It returns a method call to `encodeURI` that takes in a template literal that appends the query parameters to `url`. The function should resemble:
 
 ```jsx
-{/*extract from App.jsx*/}
-{/*...code*/}
+{
+  /*extract from App.jsx*/
+}
+{
+  /*...code*/
+}
 
 const encodeUrl = ({ sortField, sortDirection }) => {
   let sortQuery = `sort[0][field]=${sortField}&sort[0][direction]=${sortDirection}`;
   return encodeURI(`${url}?${sortQuery}`);
 };
-{/*code continues...*/}
+{
+  /*code continues...*/
+}
 ```
 
-- - [ ] Replace all references to `url` in App with `encodeUrl()`.
-  - - [ ] At each location, pass in an object containing the state variables `sortDirection` and `sortField`.
+- [ ] Replace all references to `url` in App with `encodeUrl()`.
+  - [ ] At each location, pass in an object containing the state variables `sortDirection` and `sortField`.
 
- If you are using ESLint, you should see a warning appear on your `useEffect:`
+If you are using ESLint, you should see a warning appear on your `useEffect:`
 
 ![missing sortDirection and sortField dependencies](https://raw.githubusercontent.com/Code-the-Dream-School/react-curriculum-v3/refs/heads/main/learns-app-content/assignments/assets/week-08/missing-deps.png)
 
-- - [ ] Update the `useEffect`'s dependency array to include the state values, `sortDirection` and `sortField`. The `useEffect will now fire` each time a user sets the `sortDirection` and `sortField`.
+- [ ] Update the `useEffect`'s dependency array to include the state values, `sortDirection` and `sortField`. The `useEffect will now fire` each time a user sets the `sortDirection` and `sortField`.
 
 ### Instructions Part 2: View Control Forms
 
 You now need to provide the user with a way to update the params.
 
-- - [ ] Define a new component, `TodosViewForm` on the `src/features` directory.
-- - [ ] Return a form that contains a div that will contain the form controls.
-  - - [ ] Add a `label` containing the text "Sort by".
-  - - [ ] Add a `select` element that is associated with that label
+- [ ] Define a new component, `TodosViewForm` on the `src/features` directory.
+- [ ] Return a form that contains a div that will contain the form controls.
+  - [ ] Add a `label` containing the text "Sort by".
+  - [ ] Add a `select` element that is associated with that label
   - Give the `select` element 2 `option` elements:
-    - - [ ] 1st: value="title" and includes the text, "Title"
-    - - [ ] 2nd: value="createdTime and includes the text "Time added"
-  - - [ ] Add another `label` containing "Direction" just after the previous label and select.
-  - - [ ] Add another `select` with `option` elements for:
-    - - [ ] "Ascending" using "asc" for the value
-    - - [ ] "Descending" using "desc" for the value
-- - [ ] Default export the component.
-- - [ ] In `App`, import it and place a horizontal rule between TodoList instance and the div containing the error message display.
-- - [ ] Below the `hr`, add an instance of `TodosViewForm`. The `hr` and `form` will show below the todos now:
+    - [ ] 1st: value="title" and includes the text, "Title"
+    - [ ] 2nd: value="createdTime and includes the text "Time added"
+  - [ ] Add another `label` containing "Direction" just after the previous label and select.
+  - [ ] Add another `select` with `option` elements for:
+    - [ ] "Ascending" using "asc" for the value
+    - [ ] "Descending" using "desc" for the value
+- [ ] Default export the component.
+- [ ] In `App`, import it and place a horizontal rule between TodoList instance and the div containing the error message display.
+- [ ] Below the `hr`, add an instance of `TodosViewForm`. The `hr` and `form` will show below the todos now:
 
 ![sort form on bottom of todos](https://raw.githubusercontent.com/Code-the-Dream-School/react-curriculum-v3/refs/heads/main/learns-app-content/assignments/assets/week-08/todos-hr-sort-form.png)
 
@@ -108,20 +114,20 @@ You now need to provide the user with a way to update the params.
 
 Back over in `TodosViewForm` you'll wire up the form so that each time the user updates the options, the state updates will cause the `useEffect` to automatically fetch from Airtable.
 
-- - [ ] Destructure `sortDirection`, `setSortDirection`, `sortField`, and `setSortField` out of the component's props.
+- [ ] Destructure `sortDirection`, `setSortDirection`, `sortField`, and `setSortField` out of the component's props.
 - On `select`element for the sort by:
-  - - [ ] Add an `onChange`handler:
+  - [ ] Add an `onChange`handler:
     - Its callback is an anonymous function that:
-      - - [ ] Takes the event object
-      - - [ ] Calls `setSortField` with the event target's value.
-  - - [ ] Add a `value` props and assign it to `sortField`.
-  - - [ ] Ensure that each `option`'s value matches the target field names.
-- - [ ] On the `select` element for the sort direction:
+      - [ ] Takes the event object
+      - [ ] Calls `setSortField` with the event target's value.
+  - [ ] Add a `value` props and assign it to `sortField`.
+  - [ ] Ensure that each `option`'s value matches the target field names.
+- [ ] On the `select` element for the sort direction:
   - Add an `onChange` handler that uses an anonymous function that:
-    - - [ ] Takes the event object
-    - - [ ] Calls `setSortDirection` with the event target's value.
+    - [ ] Takes the event object
+    - [ ] Calls `setSortDirection` with the event target's value.
 - To define a function `preventRefresh` whose only job is to prevent the page from refreshing if a user accidentally hits enter while working with this form:
-- - [ ] pass it to an `onSubmit` props on the `form` element.
+- [ ] pass it to an `onSubmit` props on the `form` element.
 
 At this point, the form should allow you to select either "Title" or "Time Added" and the API will automatically return the sorted todos and update the UI.
 
@@ -133,20 +139,20 @@ In this part, you'll add a search field an button to the form that was just crea
 
 #### Update Utility Function
 
-- - [ ] In `App`, create the state value (and update function) for `queryString` with an empty string for an initial value.
-- - [ ] Update `encodeUrl` utility function:
-  - - [ ] Add `queryString` to the argument object.
-  - - [ ] Create an updatable variable (`let`) `searchQuery` set to an empty string.
-  - - [ ]Add `${searchQuery}` to the end of the template literal that is used in the return value.
-  - - [ ]Above the return statement, use an `if` block to assign a value to `searchQuery` is truthy.
-    - - [ ]If true, update `searchQuery` in the block: ``searchQuery = `&filterByFormula=SEARCH("${queryString}",+title)`;``
-- - [ ]Update each `encodeUrl` call in App to include `queryString` in its params object. Each of the 3 calls should now resemble: `encodeUrl({ sortDirection, sortField, queryString })`
-- - [ ]Update the `useEffects` dependency array by adding `queryString`.
+- [ ] In `App`, create the state value (and update function) for `queryString` with an empty string for an initial value.
+- [ ] Update `encodeUrl` utility function:
+  - [ ] Add `queryString` to the argument object.
+  - [ ] Create an updatable variable (`let`) `searchQuery` set to an empty string.
+  - [ ]Add `${searchQuery}` to the end of the template literal that is used in the return value.
+  - [ ]Above the return statement, use an `if` block to assign a value to `searchQuery` is truthy.
+    - [ ]If true, update `searchQuery` in the block: ``searchQuery = `&filterByFormula=SEARCH("${queryString}",+title)`;``
+- [ ]Update each `encodeUrl` call in App to include `queryString` in its params object. Each of the 3 calls should now resemble: `encodeUrl({ sortDirection, sortField, queryString })`
+- [ ]Update the `useEffects` dependency array by adding `queryString`.
 
 #### Update Form
 
-- - [ ]In `App`, to the `TodosViewForm` instance, add props `queryString` and `setQueryString`,
-- - [ ]In `TodosViewForm`:
+- [ ]In `App`, to the `TodosViewForm` instance, add props `queryString` and `setQueryString`,
+- [ ]In `TodosViewForm`:
   - [ ] Destructure these props out.
   - [ ] Add a `div` above the previous one and include:
   - [ ] A label containing the text "Search todos:"
@@ -166,3 +172,4 @@ Your user is now able to filter the todos based on an input that they then can a
 ### Closing Notes
 
 This week you added in functionality to sort the todos by title or its creation date and filter the titles to match a string input. To minimize code edits across several fetches, you extracted the logic to build the URL string into a utility function. Also, as a result of how form state is managed, all updates happen live! Each time a user types or selects an option, the `useEffect` initiates a fetch using the updated url params. This produces so pretty snappy results but can eventually become a burden on the network and API services as the application grows or a user's todo's start growing in number. Next week' we will look at a few ways limit network traffic and perform some other optimizations to the codebase to keep the interface running smoothly.
+
