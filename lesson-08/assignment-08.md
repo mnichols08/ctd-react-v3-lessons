@@ -140,14 +140,14 @@ In this part, you'll add a search field an button to the form that was just crea
 #### Update Utility Function
 
 - [x] In `App`, create the state value (and update function) for `queryString` with an empty string for an initial value.
-- [ ] Update `encodeUrl` utility function:
-  - [ ] Add `queryString` to the argument object.
-  - [ ] Create an updatable variable (`let`) `searchQuery` set to an empty string.
-  - [ ]Add `${searchQuery}` to the end of the template literal that is used in the return value.
-  - [ ]Above the return statement, use an `if` block to assign a value to `searchQuery` is truthy.
-    - [ ]If true, update `searchQuery` in the block: ``searchQuery = `&filterByFormula=SEARCH("${queryString}",+title)`;``
-- [ ]Update each `encodeUrl` call in App to include `queryString` in its params object. Each of the 3 calls should now resemble: `encodeUrl({ sortDirection, sortField, queryString })`
-- [ ]Update the `useEffects` dependency array by adding `queryString`.
+- Update `encodeUrl` utility function:
+  - [x] Add `queryString` to the argument object.
+  - [x] Create an updatable variable (`let`) `searchQuery` set to an empty string.
+  - [x]Add `${searchQuery}` to the end of the template literal that is used in the return value.
+  - [x] Above the return statement, use an `if` block to assign a value to `searchQuery` is truthy.
+    - [x] If true, update `searchQuery` in the block: ``searchQuery = `&filterByFormula=SEARCH("${queryString}",+title)`;``
+- [x] Update each `encodeUrl` call in App to include `queryString` in its params object. Each of the 3 calls should now resemble: `encodeUrl({ sortDirection, sortField, queryString })`
+- [x] Update the `useEffects` dependency array by adding `queryString`.
 
 #### Update Form
 
