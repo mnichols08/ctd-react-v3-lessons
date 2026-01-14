@@ -116,16 +116,16 @@ Back over in `TodosViewForm` you'll wire up the form so that each time the user 
 
 - [x] Destructure `sortDirection`, `setSortDirection`, `sortField`, and `setSortField` out of the component's props.
 - On `select`element for the sort by:
-  - [ ] Add an `onChange`handler:
+  - [x] Add an `onChange`handler:
     - Its callback is an anonymous function that:
-      - [ ] Takes the event object
-      - [ ] Calls `setSortField` with the event target's value.
-  - [ ] Add a `value` props and assign it to `sortField`.
-  - [ ] Ensure that each `option`'s value matches the target field names.
+      - [x] Takes the event object
+      - [x] Calls `setSortField` with the event target's value.
+  - [x] Add a `value` props and assign it to `sortField`.
+  - [x] Ensure that each `option`'s value matches the target field names.
 - On the `select` element for the sort direction:
   - Add an `onChange` handler that uses an anonymous function that:
-    - [ ] Takes the event object
-    - [ ] Calls `setSortDirection` with the event target's value.
+    - [x] Takes the event object
+    - [x] Calls `setSortDirection` with the event target's value.
 - To define a function `preventRefresh` whose only job is to prevent the page from refreshing if a user accidentally hits enter while working with this form:
 - [ ] pass it to an `onSubmit` props on the `form` element.
 
