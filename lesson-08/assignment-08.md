@@ -122,7 +122,7 @@ Back over in `TodosViewForm` you'll wire up the form so that each time the user 
       - [ ] Calls `setSortField` with the event target's value.
   - [ ] Add a `value` props and assign it to `sortField`.
   - [ ] Ensure that each `option`'s value matches the target field names.
-- [ ] On the `select` element for the sort direction:
+- On the `select` element for the sort direction:
   - Add an `onChange` handler that uses an anonymous function that:
     - [ ] Takes the event object
     - [ ] Calls `setSortDirection` with the event target's value.
