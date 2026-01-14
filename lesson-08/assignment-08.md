@@ -139,7 +139,7 @@ In this part, you'll add a search field an button to the form that was just crea
 
 #### Update Utility Function
 
-- [ ] In `App`, create the state value (and update function) for `queryString` with an empty string for an initial value.
+- [x] In `App`, create the state value (and update function) for `queryString` with an empty string for an initial value.
 - [ ] Update `encodeUrl` utility function:
   - [ ] Add `queryString` to the argument object.
   - [ ] Create an updatable variable (`let`) `searchQuery` set to an empty string.
