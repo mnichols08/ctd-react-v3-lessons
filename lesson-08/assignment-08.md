@@ -126,8 +126,8 @@ Back over in `TodosViewForm` you'll wire up the form so that each time the user 
   - Add an `onChange` handler that uses an anonymous function that:
     - [x] Takes the event object
     - [x] Calls `setSortDirection` with the event target's value.
-- To define a function `preventRefresh` whose only job is to prevent the page from refreshing if a user accidentally hits enter while working with this form:
-- [ ] pass it to an `onSubmit` props on the `form` element.
+- [x] Define a function `preventRefresh` whose only job is to prevent the page from refreshing if a user accidentally hits enter while working with this form:
+- [x] pass it to an `onSubmit` props on the `form` element.
 
 At this point, the form should allow you to select either "Title" or "Time Added" and the API will automatically return the sorted todos and update the UI.
 
