@@ -151,7 +151,7 @@ In this part, you'll add a search field an button to the form that was just crea
 
 #### Update Form
 
-- [ ]In `App`, to the `TodosViewForm` instance, add props `queryString` and `setQueryString`,
+- [x]In `App`, to the `TodosViewForm` instance, add props `queryString` and `setQueryString`,
 - [ ]In `TodosViewForm`:
   - [ ] Destructure these props out.
   - [ ] Add a `div` above the previous one and include:
