@@ -189,5 +189,8 @@ Lastly, referring to Documentation (directly from whatever technology you are us
 Please answer the below prompts in your assignment submission:
 
 - Q: When was a time you got misinformation or bad advice? What happened? Also consider any time an artificial intelligence tool has given you bad/weird answers. Share about that experience here.
+- A: Sometimes I get bad advice from coworkers about parts to sell and it will lead to me looking like the bad guy. Also, I often use ChatGPT to help diagnose things with my newborn child. A lot of times it leads me to panic and disarray, but after getting to the doctor I am told that the internet is a new parent's worst enemy.
 - Q: What are some ‘clues’ that you use to help you assess whether a resource is applicable/trustworthy or not? What are some ways you can verify the information you got from AI was accurate/current?
+- This is difficult since we tend to trust the experts. I usually have to ask more than one person, and ultimately end up trying edge cases to get the best answer and reason with it on my own terms.
 - Q: What are some ways you’ll build on your information literacy either in your personal life or as a developer?
+- A: I try to keep up with new in technology and will teach others about thing as I learn them just to reinforce what I know. I find being in the "hot seat" is a great tool for growth.
