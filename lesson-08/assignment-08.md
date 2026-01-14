@@ -4,8 +4,8 @@
 
 After completing this week's assignment, your app should:
 
-- [ ] Use the API to sort todos by `title` or `createdTime`
-- [ ] Use the API to search for todos based on title contents
+- [x] Use the API to sort todos by `title` or `createdTime`
+- [x] Use the API to search for todos based on title contents
 
 ### Instructions Part 1: Using Airtable's Query Parameters
 
