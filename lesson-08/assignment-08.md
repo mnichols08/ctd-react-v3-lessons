@@ -152,18 +152,18 @@ In this part, you'll add a search field an button to the form that was just crea
 #### Update Form
 
 - [x]In `App`, to the `TodosViewForm` instance, add props `queryString` and `setQueryString`,
-- [ ]In `TodosViewForm`:
-  - [ ] Destructure these props out.
-  - [ ] Add a `div` above the previous one and include:
-  - [ ] A label containing the text "Search todos:"
+- In `TodosViewForm`:
+  - [x] Destructure these props out.
+  - [x] Add a `div` above the previous one and include:
+  - [x] A label containing the text "Search todos:"
   - An input with props:
-  - [ ] `type="text"`
-  - [ ] `value={queryString}`
-  - [ ] `onChange((e)=> {setQueryString(e.target.value)`
+  - [x] `type="text"`
+  - [x] `value={queryString}`
+  - [x] `onChange((e)=> {setQueryString(e.target.value)`
   - A button:
-  - [ ] Set to the type of button.
-  - [ ] Contains the text "Clear".
-  - [ ] And empties `queryString` whenever it's clicked.
+  - [x] Set to the type of button.
+  - [x] Contains the text "Clear".
+  - [x] And empties `queryString` whenever it's clicked.
 
 Your user is now able to filter the todos based on an input that they then can also reset.
 
